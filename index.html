@@ -19,18 +19,18 @@
     </div>
 <script type="text/javascript">
 var dateSelector  = $('#dateSelect').MPDatepicker();
-dateSelector.on('change', function(e, dates) {                          // Do something when the dates are changed
-        alert('From: ' + dates.from + '\nTo: ' + dates.to);
-    });
-/*
+
+
 function runQuery(){
+  alert(dateSelector.to);
+  /*
   MP.api.query('/api/2.0/stream/', {to_date: , from_date: , distinct_ids: , limit: 1000}, {dataType: 'json'}).done(function(json) {
     console.log('got json\n', json);
   }).fail(function($xhr) {
     console.log('error with request', $xhr);
-  });
+  });*/
 }
-*/
+
 </script>
   </body>
 </html>
