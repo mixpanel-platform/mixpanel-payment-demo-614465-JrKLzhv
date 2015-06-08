@@ -19,7 +19,9 @@
     </div>
 <script type="text/javascript">
 var dateSelector  = $('#dateSelect').MPDatepicker();
-alert(dateSelector.to+ "AND FROM = "+dateSelector.from);
+dateSelector.on('change', function(e, dates) {                          // Do something when the dates are changed
+        alert('From: ' + dates.from + '\nTo: ' + dates.to);
+    });
 /*
 function runQuery(){
   MP.api.query('/api/2.0/stream/', {to_date: , from_date: , distinct_ids: , limit: 1000}, {dataType: 'json'}).done(function(json) {
