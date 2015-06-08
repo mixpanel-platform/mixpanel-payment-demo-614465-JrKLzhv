@@ -24,7 +24,7 @@ var dateSelector  = $('#dateSelect').MPDatepicker();
 function runQuery(){
   var dateRange  = dateSelector.MPDatepicker('value');
   var toDateFormatted = dateRange.to.getFullYear()+"-"+dateRange.to.getMonth()+"-"+dateRange.to.getDate();
-  var toDateFormatted = dateRange.from.getFullYear()+"-"+dateRange.from.getMonth()+"-"+dateRange.from.getDate();
+  var fromDateFormatted = dateRange.from.getFullYear()+"-"+dateRange.from.getMonth()+"-"+dateRange.from.getDate();
   console.log(toDateFormatted);
   console.log(fromDateFormatted);
   var distinctID = $('#distinctIDVal').val();
