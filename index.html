@@ -25,7 +25,7 @@ function runQuery(){
   var dateRange  = dateSelector.MPDatepicker('value');
   var distinctID = $('#distinctIDVal').val();
 
-  MP.api.query('/api/2.0/stream/', {to_date: dateRange.to, from_date: dateRange.from, distinct_ids: distinctID, limit: 1000}, {dataType: 'json'}).done(function(json) {
+  MP.api.query('/api/2.0/stream/query', {to_date: dateRange.to, from_date: dateRange.from, distinct_ids: distinctID, limit: 1000}, {dataType: 'json'}).done(function(json) {
     console.log('got json\n', json);
   }).fail(function($xhr) {
     console.log('error with request', $xhr);
