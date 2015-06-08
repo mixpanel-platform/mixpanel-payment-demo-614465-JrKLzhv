@@ -35,7 +35,7 @@ function runQuery(){
     console.log('got json\n', results.results.events);
     
     for(var i = 0; i < results.results.events.length; i++){
-      console.log(results.results.events[i]);
+      console.log(results.results.events[i].event);
     }
     
   }).fail(function($xhr) {
