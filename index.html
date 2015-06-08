@@ -23,6 +23,8 @@ var dateSelector  = $('#dateSelect').MPDatepicker();
 
 function runQuery(){
   var dateRange  = dateSelector.MPDatepicker('value');
+  var toMonth = dateRange.to.getMonth() +1;
+  var fromMonth = dateRange.from.getMonth()+1;
   var toDateFormatted = dateRange.to.getFullYear()+"-"+dateRange.to.getMonth()+"-"+dateRange.to.getDate();
   var fromDateFormatted = dateRange.from.getFullYear()+"-"+dateRange.from.getMonth()+"-"+dateRange.from.getDate();
   console.log(dateRange);
