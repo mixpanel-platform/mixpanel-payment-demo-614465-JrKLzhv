@@ -31,8 +31,8 @@ function runQuery(){
   var distinctIDs = [];
   distinctIDs.push(distinctID);
 
-  MP.api.query('/api/2.0/stream/query', {to_date: toDateFormatted, from_date: fromDateFormatted, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(json) {
-    console.log('got json\n', json);
+  MP.api.query('/api/2.0/stream/query', {to_date: toDateFormatted, from_date: fromDateFormatted, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(results) {
+    console.log('got json\n', results.results);
   }).fail(function($xhr) {
     console.log('error with request', $xhr);
   });
