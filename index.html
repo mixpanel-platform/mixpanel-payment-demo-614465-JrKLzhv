@@ -22,7 +22,8 @@ var dateSelector  = $('#dateSelect').MPDatepicker();
 
 
 function runQuery(){
-  alert(dateSelector.to);
+  var dateRange  = dateSelector.MPDatepicker('value');
+  alert(dateRange.to);
   /*
   MP.api.query('/api/2.0/stream/', {to_date: , from_date: , distinct_ids: , limit: 1000}, {dataType: 'json'}).done(function(json) {
     console.log('got json\n', json);
