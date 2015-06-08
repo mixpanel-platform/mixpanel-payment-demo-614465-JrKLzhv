@@ -33,6 +33,11 @@ function runQuery(){
 
   MP.api.query('/api/2.0/stream/query', {to_date: toDateFormatted, from_date: fromDateFormatted, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(results) {
     console.log('got json\n', results.results.events);
+    
+    for(var i = 0; i < results.results.events.length; i++){
+      console.log(results.results.events[i]);
+    }
+    
   }).fail(function($xhr) {
     console.log('error with request', $xhr);
   });
