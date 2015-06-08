@@ -27,13 +27,11 @@ function runQuery(){
   var fromMonth = dateRange.from.getMonth()+1;
   var toDateFormatted = dateRange.to.getFullYear()+"-"+toMonth+"-"+dateRange.to.getDate();
   var fromDateFormatted = dateRange.from.getFullYear()+"-"+fromMonth+"-"+dateRange.from.getDate();
-  console.log(toDateFormatted);
-  console.log(fromDateFormatted);
   var distinctID = $('#distinctIDVal').val();
   var distinctIDs = [];
   distinctIDs.push(distinctID);
 
-  MP.api.query('/api/2.0/stream/query', {to_date: dateRange.to, from_date: dateRange.from, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(json) {
+  MP.api.query('/api/2.0/stream/query', {to_date: toDateFormatted, from_date: fromDateFormatted, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(json) {
     console.log('got json\n', json);
   }).fail(function($xhr) {
     console.log('error with request', $xhr);
