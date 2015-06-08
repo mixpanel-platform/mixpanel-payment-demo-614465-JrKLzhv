@@ -23,6 +23,7 @@ var dateSelector  = $('#dateSelect').MPDatepicker();
 
 function runQuery(){
   var dateRange  = dateSelector.MPDatepicker('value');
+  var toDateFormatted = dateRange.to.getFullYear()"-"dateRange.to.getMonth()"-"dateRange.to.getDate();
   var distinctID = $('#distinctIDVal').val();
   var distinctIDs = [];
   distinctIDs.push(distinctID);
