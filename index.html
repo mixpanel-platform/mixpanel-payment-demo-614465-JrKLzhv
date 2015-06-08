@@ -23,8 +23,8 @@ var dateSelector  = $('#dateSelect').MPDatepicker();
 
 function runQuery(){
   var dateRange  = dateSelector.MPDatepicker('value');
-  //var distinctID = $('#distinctIDVal').value();
-  alert("hello world");
+  var distinctID = $('#distinctIDVal').val();
+  alert(distinctID);
   /*
   MP.api.query('/api/2.0/stream/', {to_date: dateRange.to, from_date: dateRange.from, distinct_ids: , limit: 1000}, {dataType: 'json'}).done(function(json) {
     console.log('got json\n', json);
