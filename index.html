@@ -69,7 +69,8 @@ function runQuery(){
       var row2 = table.insertRow(rowNum);
       var cell3 = row.insertCell(0);
       cell3.rowSpan = "2";
-      cell3.innerHTML = results.results.evente[i].properties;
+      cell3.innerHTML = results.results.events[i].properties.time;
+      rowNum++;
       console.log("\t"+results.results.events[i].properties.time);
       
     }
