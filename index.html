@@ -46,8 +46,9 @@ function runQuery(){
       console.log(results.results.events[i].event);
       var row = table.insertRow(i);
       var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
       cell1.innerHTML = results.results.events[i].event;
-      //console.log("\t"+results.results.events[i].properties.time);
+      cell2 = results.results.events[i].properties.time;
       
     }
     
