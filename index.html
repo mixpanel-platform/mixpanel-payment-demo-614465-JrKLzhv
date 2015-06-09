@@ -36,7 +36,7 @@ function runQuery(){
     
     for(var i = 0; i < results.results.events.length; i++){
       console.log(results.results.events[i].event);
-      console.log("\t"+results.results.events[i].properties);
+      console.log("\t"+results.results.events[i].properties.time);
     }
     
   }).fail(function($xhr) {
