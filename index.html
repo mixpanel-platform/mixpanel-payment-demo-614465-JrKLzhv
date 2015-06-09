@@ -62,6 +62,7 @@ function runQuery(){
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
       var formattedDateOccurred = dateOccurred.toLocaleDateString()+" - "+dateOccurred.toLocaleTimeString();
+      cell1.className = "clicker";
       cell1.innerHTML = results.results.events[i].event;
       cell2.innerHTML = formattedDateOccurred;
       console.log("\t"+results.results.events[i].properties.time);
@@ -73,6 +74,10 @@ function runQuery(){
   });
   
 }
+
+$('.clicker').click(function(){
+  alert('hello world');
+});
 
 </script>
   </body>
