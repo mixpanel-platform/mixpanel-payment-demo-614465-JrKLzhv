@@ -43,13 +43,15 @@ function runQuery(){
     var table = document.getElementById("eventTable");
 
     for(var i = 0; i < results.results.events.length; i++){
-      console.log(results.results.events[i].event);
+      //console.log(results.results.events[i].event);
       var row = table.insertRow(i);
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
+      var dateOccurred = new Date(results.results.events[i].properties.time);
+      var formattedDateOccurred = dateOccurred.toString();
       cell1.innerHTML = results.results.events[i].event;
-      cell2.innerHTML = results.results.events[i].properties.time;
-      console.log("\t"+results.results.events[i].properties.time);
+      cell2.innerHTML = formattedDateOccurred;
+      //console.log("\t"+results.results.events[i].properties.time);
       
     }
     
