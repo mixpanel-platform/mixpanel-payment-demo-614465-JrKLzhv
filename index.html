@@ -55,15 +55,21 @@ function runQuery(){
     console.log('got json\n', results.results.events);
     var table = document.getElementById("eventTable");
     results.results.events.reverse();
+    var rowNum = 0;
     for(var i = 0; i < results.results.events.length; i++){
       //console.log(results.results.events[i].event);
-      var row = table.insertRow(i);
+      var row = table.insertRow(rowNum);
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
       var formattedDateOccurred = dateOccurred.toLocaleDateString()+" - "+dateOccurred.toLocaleTimeString();
       cell1.innerHTML = results.results.events[i].event;
       cell2.innerHTML = formattedDateOccurred;
+      rowNum++;
+      var row2 = table.insertRow(rowNum);
+      var cell3 = row.insertCell(0);
+      cell3.rowSpan = "2";
+      cell3.innerHTML = results.results.evente[i].properties;
       console.log("\t"+results.results.events[i].properties.time);
       
     }
@@ -74,9 +80,6 @@ function runQuery(){
   
 }
 
-$('td').click(function(){
-  alert('hello world');
-});
 
 </script>
   </body>
