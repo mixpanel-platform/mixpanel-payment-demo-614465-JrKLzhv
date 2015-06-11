@@ -72,6 +72,7 @@ function runQuery(){
       // Event and event time row
       var row = table.insertRow(rowNum);
       row.id = "eventRow"+i;
+      row.className = "eventRow";
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
@@ -104,6 +105,11 @@ function runQuery(){
   });
   
 }
+
+// Some jquery clicks 
+$('.eventRow').click(function(){
+  $(this).nextUntil('.clicker').slideToggle('normal');
+});
 
 
 </script>
