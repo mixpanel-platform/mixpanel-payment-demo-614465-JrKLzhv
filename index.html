@@ -75,7 +75,7 @@ function runQuery(){
       var propertiesHTML = "<b>Properties:<b><br />";
       for (var property in results.results.events[i].properties) {
         if (results.results.events[i].properties.hasOwnProperty(property)) {
-            propertiesHTML += property+": "+results.results.events[i].properties.property+", "
+            propertiesHTML += property+": "+results.results.events[i].properties[property]+", "
         }
       }
       cell3.innerHTML = propertiesHTML;
