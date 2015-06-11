@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <style>
       table, td {
           border: 1px solid black;
@@ -74,6 +73,7 @@ function runQuery(){
       var row = table.insertRow(rowNum);
       row.id = "eventRow"+i;
       row.className = "eventRow";
+      row.onclick = function(i) { console.log("show/hide propertyRow"+i); };
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
@@ -108,9 +108,7 @@ function runQuery(){
   
 }
 
-$(".eventRow").click(function() {
-  console.log("clicked");
-});
+
 
 </script>
   </body>
