@@ -28,6 +28,7 @@
       .propertiesHeader1 {
         font-weight:bold;
         font-size: 15px;
+        margin-bottom:5px;
       }
       .propertiesHeader {
         font-weight:bold;
@@ -86,7 +87,7 @@ function runQuery(){
         row2.className = "propertyRow";
         var cell3 = row2.insertCell(0);
         cell3.colSpan = "2";
-        var propertiesHTML = "<span class='propertiesHeader1'>Properties:</span><br /><br />";
+        var propertiesHTML = "<span class='propertiesHeader1'>Properties:</span><br />";
         for (var property in results.results.events[i].properties) {
           if (results.results.events[i].properties.hasOwnProperty(property)) {
               propertiesHTML += "<span class='propertiesHeader'>"+property+":</span> "+results.results.events[i].properties[property]+", &nbsp;"
