@@ -75,7 +75,8 @@ function runQuery(){
       if(properties) {
         // Properties row 
         var row2 = table.insertRow(rowNum);
-        row2.id="property"+i;
+        row2.id="propertyRow"+i;
+        row2.class = "propertyRow";
         var cell3 = row2.insertCell(0);
         cell3.colSpan = "2";
         var propertiesHTML = "<span class='propertiesHeader'>Properties:</span><br />";
