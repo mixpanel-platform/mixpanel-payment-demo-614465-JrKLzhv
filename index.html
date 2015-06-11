@@ -73,7 +73,6 @@ function runQuery(){
       var row = table.insertRow(rowNum);
       row.id = "eventRow"+i;
       row.className = "eventRow";
-      row.onclick = function(){ showHideProperties(); } ;
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
@@ -108,9 +107,9 @@ function runQuery(){
   
 }
 
-function showHideProperties() {
-  console.log('clicked');
-}
+$(".eventRow").click(function() {
+  console.log("clicked");
+});
 
 </script>
   </body>
