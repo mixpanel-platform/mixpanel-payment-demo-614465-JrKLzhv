@@ -73,6 +73,7 @@ function runQuery(){
       var row = table.insertRow(rowNum);
       row.id = "eventRow"+i;
       row.className = "eventRow";
+      row.onclick = "showHideProperties(this)";
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
@@ -107,12 +108,9 @@ function runQuery(){
   
 }
 
-// Some jquery clicks 
-$('.eventRow').click(function(){
-  //$(this).nextUntil('.eventRow').slideToggle('normal');
-  console.log('click happened');
-});
-
+function showHideProperties(id) {
+  console.log('clicked');
+}
 
 </script>
   </body>
