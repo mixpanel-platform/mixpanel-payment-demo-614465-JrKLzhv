@@ -86,7 +86,7 @@ function runQuery(){
         row2.className = "propertyRow";
         var cell3 = row2.insertCell(0);
         cell3.colSpan = "2";
-        var propertiesHTML = "<span class='propertiesHeader1'>Properties:</span><br />";
+        var propertiesHTML = "<span class='propertiesHeader1'>Properties:</span><br /><br />";
         for (var property in results.results.events[i].properties) {
           if (results.results.events[i].properties.hasOwnProperty(property)) {
               propertiesHTML += "<span class='propertiesHeader'>"+property+":</span> "+results.results.events[i].properties[property]+", &nbsp;"
