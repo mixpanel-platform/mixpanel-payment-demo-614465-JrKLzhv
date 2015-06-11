@@ -69,7 +69,7 @@ function runQuery(){
       rowNum++;
       var row2 = table.insertRow(rowNum);
       var cell3 = row2.insertCell(0);
-      cell3.colspan = "2";
+      cell3.attr('colspan',3);
       cell3.innerHTML = results.results.events[i].properties.time;
       rowNum++;
       console.log("\t"+rowNum);
