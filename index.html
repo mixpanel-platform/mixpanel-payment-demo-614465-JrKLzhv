@@ -73,7 +73,7 @@ function runQuery(){
       var row = table.insertRow(rowNum);
       row.id = "eventRow"+i;
       row.className = "eventRow";
-      row.onclick = function(i) { console.log("show/hide propertyRow"+i); };
+      row.onclick = function() { console.log("show/hide propertyRow"+i); };
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var dateOccurred = new Date(results.results.events[i].properties.time*1000);
