@@ -57,7 +57,8 @@ function runQuery(){
     results.results.events.reverse();
     var rowNum = 0;
     for(var i = 0; i < results.results.events.length; i++){
-      //console.log(results.results.events[i].event);
+      
+      // Event and event time row
       var row = table.insertRow(rowNum);
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
@@ -65,8 +66,9 @@ function runQuery(){
       var formattedDateOccurred = dateOccurred.toLocaleDateString()+" - "+dateOccurred.toLocaleTimeString();
       cell1.innerHTML = results.results.events[i].event;
       cell2.innerHTML = formattedDateOccurred;
-      
       rowNum++;
+      
+      // Properties row 
       var row2 = table.insertRow(rowNum);
       var cell3 = row2.insertCell(0);
       cell3.colSpan = "2";
