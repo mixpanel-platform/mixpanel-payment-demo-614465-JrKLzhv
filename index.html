@@ -43,7 +43,7 @@
       <form id="property" style="margin-bottom: 15px; height: 31px">
         <input type="text" autofocus placeholder="Distinct ID" name="distinctIDVal" id="distinctIDVal" value="" style="color: rgb(95,105,131); height: 30px; width: 500px; padding: 0 4px; font-size: 12px; border: 1px solid rgb(201,209,219)">
         <input type="button" name="submitButton" id="submitButton" onclick="runQuery()" value="Get Events" style="font-weight: bold; color: rgb(95,105,131); font-size: 12px; height: 31px; padding: 0 10px; margin-left: 10px; border: 1px solid rgb(201,209,219); background-color: rgb(242,244,246)"><br clear="all" /><br clear="all" />
-        <input type="checkbox" name="propertiesBool" value="properties"> <span style="font-size: 13px; color: rgb(95,105,131)">Include event properties</span><br>
+        <input type="checkbox" id="propertiesCheckbox" name="propertiesBool" value="properties"> <span style="font-size: 13px; color: rgb(95,105,131)">Include event properties</span><br>
       </form><br clear="all" />
       <div id="mainOutput">
         <table id="eventTable" border="1" style="width:100%"></table>
@@ -54,6 +54,7 @@ var dateSelector  = $('#dateSelect').MPDatepicker();
 var properties = true; 
 
 function runQuery(){
+  alert(document.getElementById('propertiesCheckbox').checked);
   var dateRange  = dateSelector.MPDatepicker('value');
   var toMonth = dateRange.to.getMonth() +1;
   var fromMonth = dateRange.from.getMonth()+1;
