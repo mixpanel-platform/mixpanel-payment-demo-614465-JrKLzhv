@@ -51,10 +51,9 @@
     </div>
 <script type="text/javascript">
 var dateSelector  = $('#dateSelect').MPDatepicker();
-var properties = true; 
 
 function runQuery(){
-  alert(document.getElementById('propertiesCheckbox').checked);
+  var properties = document.getElementById('propertiesCheckbox').checked;
   var dateRange  = dateSelector.MPDatepicker('value');
   var toMonth = dateRange.to.getMonth() +1;
   var fromMonth = dateRange.from.getMonth()+1;
