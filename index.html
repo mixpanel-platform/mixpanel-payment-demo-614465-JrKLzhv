@@ -50,9 +50,13 @@
       </div>
     </div>
 <script type="text/javascript">
+
 var dateSelector  = $('#dateSelect').MPDatepicker();
 
+// Query
 function runQuery(){
+  
+  // Get inputs 
   var properties = document.getElementById('propertiesCheckbox').checked;
   var dateRange  = dateSelector.MPDatepicker('value');
   var toMonth = dateRange.to.getMonth() +1;
@@ -63,6 +67,7 @@ function runQuery(){
   var distinctIDs = [];
   distinctIDs.push(distinctID);
 
+  // Mixpanel API query and callback 
   MP.api.query('/api/2.0/stream/query', {to_date: toDateFormatted, from_date: fromDateFormatted, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(results) {
     
     // Log results
@@ -74,6 +79,7 @@ function runQuery(){
       table.deleteRow(0);
     }
     
+    // Organize and go through each result (event)
     results.results.events.reverse();
     var rowNum = 0;
     if(results.results.events.length == 0) {
@@ -93,8 +99,8 @@ function runQuery(){
       cell2.innerHTML = formattedDateOccurred;
       rowNum++;
       
+      // Properties row (if properties checkbox is checked)
       if(properties) {
-        // Properties row 
         var row2 = table.insertRow(rowNum);
         row2.id="propertyRow"+i;
         row2.className = "propertyRow";
@@ -107,17 +113,16 @@ function runQuery(){
           }
         }
         cell3.innerHTML = propertiesHTML;
-        //cell3.style.display = "none";
         rowNum++;
       }
 
     }
     
   }).fail(function($xhr) {
+    // Upon query failure 
     console.log('error with request', $xhr);
     alert('Request error');
   });
-  
 }
 
 
