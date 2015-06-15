@@ -64,6 +64,8 @@ function runQuery(){
   distinctIDs.push(distinctID);
 
   MP.api.query('/api/2.0/stream/query', {to_date: toDateFormatted, from_date: fromDateFormatted, distinct_ids: distinctIDs, limit: 1000}, {dataType: 'json'}).done(function(results) {
+    
+    // Log results
     console.log('got json\n', results.results.events);
     
     // Get table and delete any current rows 
@@ -75,7 +77,7 @@ function runQuery(){
     results.results.events.reverse();
     var rowNum = 0;
     if(results.results.events.length == 0) {
-      alert('no results');
+      alert('No results');
     }
     for(var i = 0; i < results.results.events.length; i++){
       
@@ -113,7 +115,7 @@ function runQuery(){
     
   }).fail(function($xhr) {
     console.log('error with request', $xhr);
-    console.log('hello world');
+    alert('Request error');
   });
   
 }
