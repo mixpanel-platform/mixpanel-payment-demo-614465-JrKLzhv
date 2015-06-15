@@ -69,7 +69,7 @@ function runQuery(){
     // Get table and delete any current rows 
     var table = document.getElementById("eventTable");
     var rowCount = table.rows.length;
-    for (var i = 0; i < rowCount; i++) {
+    for (var i = 0; i < rowCount-1; i++) {
       table.deleteRow(i);
     }
     
